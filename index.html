@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Budget Application</title>
+    <style>
+      .icon-size i {
+        font-size: 20px;
+      }
+      .b-border {
+        border-left: 5px solid #547ef9;
+        border-right: 5px solid #547ef9;
+      }
+      h3 {
+        color: #547ef9;
+      }
+      body {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15)
+          ),
+          url("budget2.jpg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        /* background: scroll; */
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- upper section -->
+      <div class="row mt-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border-top: 5px solid #547ef9">
+          <div class="row">
+            <h1
+              style="color: #547ef9; font-weight: 700"
+              class="mb-3 text-center"
+            >
+              BUDGET APPLICATION
+            </h1>
+            <div
+              class="col-md-4 bg-light shadow-lg p-4"
+              style="border-left: 5px solid #547ef9"
+            >
+              <h3>Budget</h3>
+              <form class="form">
+                <input
+                  type="number"
+                  placeholder="Enter budget"
+                  class="form-control mb-3"
+                  id="budget"
+                />
+                <button
+                  class="btn text-white"
+                  style="background-color: #547ef9"
+                  id="budget-btn"
+                >
+                  Set Budget
+                </button>
+              </form>
+            </div>
+            <div class="col-md-1"></div>
+            <div
+              class="col-md-7 bg-light shadow-lg p-4"
+              style="border-right: 5px solid #547ef9"
+            >
+              <h3>Expense</h3>
+              <form class="form">
+                <input
+                  type="text"
+                  placeholder="Enter product title"
+                  class="form-control mb-3 textInput"
+                  id="title"
+                />
+                <input
+                  type="number"
+                  placeholder="Enter product cost"
+                  class="form-control mb-3"
+                  id="cost"
+                />
+                <input
+                  type="date"
+                  placeholder="Enter product cost"
+                  class="form-control mb-3"
+                  id="date"
+                />
+                <button
+                  class="btn text-white"
+                  style="background-color: #547ef9"
+                  id="product-btn"
+                >
+                  Set Product
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <!-- middle section -->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 mt-5" style="background-color: #547ef9">
+          <div class="row pt-3">
+            <div class="col-md-4 text-center text-white">
+              <h4>Total Budget</h4>
+              <p id="total-budget">0</p>
+            </div>
+            <div class="col-md-4 text-center text-white">
+              <h4>Total Expense</h4>
+              <p id="expense">0</p>
+            </div>
+            <div class="col-md-4 text-center text-white">
+              <h4>Total Balance</h4>
+              <p id="balance">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <!-- filter item  -->
+      <div class="row mt-4">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 shadow-lg">
+          <div class="row bg-light">
+            <div
+              class="text-center p-3 d-flex justify-content-center gap-3 shadow-sm b-border"
+              style="font-size: 20px"
+            >
+              <label class="fst-normal color">Search Expense Name </label>
+              <input
+                type="text"
+                id="search"
+                placeholder="filter items by title "
+                class="form-control w-50 textInput"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <!-- end section -->
+
+      <div class="row mt-4">
+        <div class="col-md-2"></div>
+        <div
+          class="col-md-8 mb-4 shadow-lg"
+          style="border-top: 5px solid #547ef9"
+        >
+          <div id="expense-list"></div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <!-- container div end -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
